@@ -1,55 +1,59 @@
-# Prerequisites
-*.d
+## Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+## Visual Studio cache
+.vs/
+*.dbmdl
+*.user
+*.suo
 
-# Linker output
-*.ilk
-*.map
-*.exp
+## Resharper / Rider
+_ReSharper*/
+*.DotSettings.user
+.idea/
 
-# Precompiled Headers
-*.gch
-*.pch
+## Test results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+## NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+## DotCover
+*.dotCover
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+## Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+## T4 templates
+*.Generated.cs
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+## Others
+*.Cache
+*.sqlite
+*.db
+*.db-shm
+*.db-wal
 
-# debug information files
-*.dwo
+## Entity Framework
+Migrations/
+
+## Publish
+*.publishsettings
+publish/
+app.publish/
+
+## User secrets
+secrets.json
+
+## Local config
+appsettings.Development.json
