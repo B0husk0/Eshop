@@ -701,7 +701,7 @@
         "build": {
           "buildTransitive/net8.0/Microsoft.Extensions.Options.targets": {}
         }
-      },
+        },
       "Microsoft.Extensions.Primitives/9.0.9": {
         "type": "package",
         "compile": {
@@ -943,13 +943,13 @@
         "compile": {
           "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
             "related": ".pdb;.xml"
-          }
+      }
         },
         "runtime": {
           "lib/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll": {
             "related": ".pdb;.xml"
-          }
-        },
+    }
+  },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
