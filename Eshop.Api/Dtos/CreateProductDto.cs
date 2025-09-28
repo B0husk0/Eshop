@@ -1,8 +1,13 @@
-﻿namespace Eshop.Api.Dtos
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Eshop.Api.Dtos
 {
     public class CreateProductDto
     {
+        [Required, MaxLength(200)]
+        [RegularExpression(@"\S+", ErrorMessage = "Name cannot be empty or whitespace.")]
         public string Name { get; set; } = string.Empty;
+        [Required, Url]
         public string ImageUrl { get; set; } = string.Empty;
 
         // optional fields

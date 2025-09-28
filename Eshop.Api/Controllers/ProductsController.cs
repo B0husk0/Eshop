@@ -65,6 +65,10 @@ namespace Eshop.Api.Controllers
             if (!ModelState.IsValid)
                 return ValidationProblem(ModelState);
 
+            if (string.IsNullOrWhiteSpace(dto.Name))
+            {
+                return BadRequest(new { Message = "Product name cannot be empty." });
+            }
             // fallback to Uncategorized if no category
             var categoryId = dto.CategoryId ?? 100;
 
