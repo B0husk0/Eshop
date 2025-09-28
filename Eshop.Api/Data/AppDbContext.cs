@@ -26,7 +26,8 @@ namespace Eshop.Api.Data
                 new Category { Id = 7, Name = "Cases", ImageUrl = "https://via.placeholder.com/150?text=Cases" },
                 new Category { Id = 8, Name = "Cooling", ImageUrl = "https://via.placeholder.com/150?text=Cooling" },
                 new Category { Id = 9, Name = "Monitors", ImageUrl = "https://via.placeholder.com/150?text=Monitors" },
-                new Category { Id = 10, Name = "Peripherals", ImageUrl = "https://via.placeholder.com/150?text=Peripherals" }
+                new Category { Id = 10, Name = "Peripherals", ImageUrl = "https://via.placeholder.com/150?text=Peripherals" },
+                new Category { Id = 100, Name = "Uncategorized", ImageUrl = "https://via.placeholder.com/150?text=Uncategorized" }
             );
 
             // Product seeding
