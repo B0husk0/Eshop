@@ -27,7 +27,7 @@ packages/
 # Local config
 appsettings.Development.json
 secrets.json
-
+publish/
 # SQLite
 *.db
 *.db-shm
