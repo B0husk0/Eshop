@@ -24,8 +24,8 @@ builder.Services.AddSwaggerGen(c =>
         Description = "REST API for managing products and categories in the e-shop.",
         Contact = new OpenApiContact
         {
-            Name = "Your Name",
-            Email = "you@example.com"
+            Name = "Matus Bohucky",
+            Email = "mat.bohucky@gmail.com"
         }
     });
 
