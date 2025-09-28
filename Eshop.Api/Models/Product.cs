@@ -7,6 +7,7 @@ namespace Eshop.Api.Models
         public int Id { get; set; }
 
         [Required, MaxLength(200)]
+        [RegularExpression(@"\S+", ErrorMessage = "Name cannot be empty or whitespace.")]
         public string Name { get; set; } = string.Empty;
 
         [Required, Url, MaxLength(1000)]

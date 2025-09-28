@@ -65,6 +65,10 @@ namespace Eshop.Api.Controllers
             if (!ModelState.IsValid)
                 return ValidationProblem(ModelState);
 
+            if (string.IsNullOrWhiteSpace(dto.Name))
+            {
+                return BadRequest(new { Message = "Product name cannot be empty." });
+            }
             // fallback to Uncategorized if no category
             var categoryId = dto.CategoryId ?? 100;
 
@@ -151,20 +155,26 @@ namespace Eshop.Api.Controllers
         /// <response code="400">If the request is invalid</response>
         /// <response code="404">If the product is not found</response>
         [HttpPatch("{id:int}/stock")]
-        [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProductDto>> UpdateProductStock(int id, [FromBody] UpdateStockDto dto)
         {
             if (!ModelState.IsValid)
+            {
                 return ValidationProblem(ModelState);
+            }
+
+            if (dto.Quantity < 0)
+            {
+                return BadRequest(new { Message = "Quantity cannot be negative." });
+            }
 
             var product = await _context.Products
                 .Include(p => p.Category)
                 .FirstOrDefaultAsync(p => p.Id == id);
 
             if (product == null)
+            {
                 return NotFound(new { Message = $"Product with id {id} was not found." });
+            }
 
             product.Quantity = dto.Quantity;
             await _context.SaveChangesAsync();
@@ -182,5 +192,6 @@ namespace Eshop.Api.Controllers
 
             return Ok(result);
         }
+
     }
 }
