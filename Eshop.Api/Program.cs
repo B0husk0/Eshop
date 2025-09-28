@@ -25,6 +25,5 @@ app.UseSwaggerUI(c =>
 
 app.UseHttpsRedirection();
 app.MapControllers();
-app.MapGet("/ping", () => "pong");
 
 app.Run();
