@@ -1,4 +1,5 @@
-﻿using Eshop.Api.Data;
+﻿using Asp.Versioning;
+using Eshop.Api.Data;
 using Eshop.Api.Dtos;
 using Eshop.Api.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +8,8 @@ using Microsoft.EntityFrameworkCore;
 namespace Eshop.Api.Controllers
 {
     [ApiController]
-    [Route("api/v1/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class ProductsController : ControllerBase
     {
         private readonly AppDbContext _context;
