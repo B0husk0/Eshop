@@ -1,14 +1,17 @@
+using Asp.Versioning;
+using Asp.Versioning.ApiExplorer;
 using Eshop.Api.Data;
+using Eshop.Api.Queue;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
-using Asp.Versioning;
-using Asp.Versioning.ApiExplorer;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services
 builder.Services.AddControllers();
+builder.Services.AddSingleton<IStockUpdateQueue, StockUpdateQueue>();
+builder.Services.AddHostedService<StockUpdateWorker>();
 
 // EF Core 
 builder.Services.AddDbContext<AppDbContext>(options =>
