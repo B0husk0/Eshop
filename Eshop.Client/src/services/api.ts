@@ -1,9 +1,11 @@
-const API_BASE_URL = 'http://localhost:5000';
+const API_BASE_URL = 'https://api-a-efhtd5d9bbcwc5g3.westeurope-01.azurewebsites.net';
 
 export interface Category {
   id: number;
   name: string;
   description: string;
+  imageUrl?: string;
+  products?: Product[]; 
 }
 
 export interface Product {
@@ -12,6 +14,7 @@ export interface Product {
   description: string;
   price: number;
   quantity: number;
+  imageUrl: string;
   categoryId: number;
   category?: Category;
 }
@@ -21,6 +24,7 @@ export interface CreateProductDto {
   description: string;
   price: number;
   quantity: number;
+  imageUrl: string;
   categoryId: number;
 }
 
@@ -33,6 +37,14 @@ export const api = {
     const response = await fetch(`${API_BASE_URL}/api/v1/Categories`);
     if (!response.ok) {
       throw new Error(`Failed to fetch categories: ${response.statusText}`);
+    }
+    return response.json();
+  },
+
+  getCategory: async (id: number): Promise<Category> => {
+    const response = await fetch(`${API_BASE_URL}/api/v1/Categories/${id}`);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch category: ${response.statusText}`);
     }
     return response.json();
   },

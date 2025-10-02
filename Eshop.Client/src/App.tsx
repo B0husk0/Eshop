@@ -1,10 +1,10 @@
 import { useState } from 'react';
+import { Routes, Route, Link, Navigate, useLocation } from 'react-router-dom';
 import { Store } from 'lucide-react';
 import Categories from './components/Categories';
 import Products from './components/Products';
+import CategoryProducts from './components/CategoryProducts';
 import Toast from './components/Toast';
-
-type Page = 'categories' | 'products';
 
 interface ToastState {
   message: string;
@@ -12,11 +12,15 @@ interface ToastState {
 }
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('products');
   const [toast, setToast] = useState<ToastState | null>(null);
+  const location = useLocation();
 
   const showToast = (message: string, type: 'success' | 'error') => {
     setToast({ message, type });
+  };
+
+  const isActive = (path: string) => {
+    return location.pathname === path || location.pathname.startsWith(path);
   };
 
   return (
@@ -30,37 +34,38 @@ function App() {
             </div>
 
             <div className="flex gap-2">
-              <button
-                onClick={() => setCurrentPage('categories')}
+              <Link
+                to="/categories"
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                  currentPage === 'categories'
+                  isActive('/categories')
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
               >
                 Categories
-              </button>
-              <button
-                onClick={() => setCurrentPage('products')}
+              </Link>
+              <Link
+                to="/products"
                 className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                  currentPage === 'products'
+                  isActive('/products')
                     ? 'bg-blue-600 text-white'
                     : 'text-gray-700 hover:bg-gray-100'
                 }`}
               >
                 Products
-              </button>
+              </Link>
             </div>
           </div>
         </div>
       </nav>
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {currentPage === 'categories' ? (
-          <Categories />
-        ) : (
-          <Products onNotify={showToast} />
-        )}
+        <Routes>
+          <Route path="/" element={<Navigate to="/products" replace />} />
+          <Route path="/products" element={<Products onNotify={showToast} />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/category/:id" element={<CategoryProducts onNotify={showToast} />} />
+        </Routes>
       </main>
 
       {toast && (

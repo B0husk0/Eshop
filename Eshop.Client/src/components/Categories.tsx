@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Package } from 'lucide-react';
 import { api, Category } from '../services/api';
 
@@ -46,32 +47,40 @@ export default function Categories() {
     );
   }
 
-  return (
-    <div>
-      <div className="flex items-center gap-3 mb-6">
-        <Package className="w-8 h-8 text-blue-600" />
-        <h1 className="text-3xl font-bold text-gray-900">Categories</h1>
-      </div>
 
-      {categories.length === 0 ? (
-        <div className="text-center py-12 bg-gray-50 rounded-lg">
-          <p className="text-gray-600">No categories found</p>
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {categories.map((category) => (
-            <div
-              key={category.id}
-              className="bg-white rounded-lg shadow-sm border border-gray-200 p-5 hover:shadow-md transition-shadow"
-            >
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                {category.name}
-              </h3>
-              <p className="text-gray-600 text-sm">{category.description}</p>
-            </div>
-          ))}
-        </div>
-      )}
+
+return (
+  <div>
+    <div className="flex items-center gap-3 mb-6">
+      <Package className="w-8 h-8 text-blue-600" />
+      <h1 className="text-3xl font-bold text-gray-900">Categories</h1>
     </div>
-  );
+
+    {categories.length === 0 ? (
+      <div className="text-center py-12 bg-gray-50 rounded-lg">
+        <p className="text-gray-600">No categories found</p>
+      </div>
+    ) : (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {categories.map((category) => (
+          <Link
+            key={category.id}
+            to={`/category/${category.id}`}
+            className="bg-white rounded-lg shadow-sm border border-gray-200 p-5 hover:shadow-md transition-shadow flex flex-col items-center"
+          >
+            <img
+              src={category.imageUrl}
+              alt={category.name}
+              className="w-24 h-24 object-contain mb-3 bg-gray-50 rounded"
+            />
+            <h3 className="text-lg font-semibold text-gray-900">
+              {category.name}
+            </h3>
+          </Link>
+        ))}
+      </div>
+    )}
+  </div>
+);
+
 }

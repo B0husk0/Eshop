@@ -2,6 +2,7 @@
 using Eshop.Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eshop.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251002162859_ReseedProducts")]
+    partial class ReseedProducts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.9");
@@ -146,7 +149,7 @@ namespace Eshop.Api.Migrations
                             Id = 1,
                             CategoryId = 1,
                             Description = "High performance CPU model 1",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cpu.jpg",
                             Name = "CPU 1",
                             Price = 220m,
                             Quantity = 6
@@ -156,7 +159,7 @@ namespace Eshop.Api.Migrations
                             Id = 2,
                             CategoryId = 1,
                             Description = "High performance CPU model 2",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cpu.jpg",
                             Name = "CPU 2",
                             Price = 240m,
                             Quantity = 7
@@ -166,7 +169,7 @@ namespace Eshop.Api.Migrations
                             Id = 3,
                             CategoryId = 1,
                             Description = "High performance CPU model 3",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cpu.jpg",
                             Name = "CPU 3",
                             Price = 260m,
                             Quantity = 8
@@ -176,7 +179,7 @@ namespace Eshop.Api.Migrations
                             Id = 4,
                             CategoryId = 1,
                             Description = "High performance CPU model 4",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cpu.jpg",
                             Name = "CPU 4",
                             Price = 280m,
                             Quantity = 9
@@ -186,7 +189,7 @@ namespace Eshop.Api.Migrations
                             Id = 5,
                             CategoryId = 1,
                             Description = "High performance CPU model 5",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cpu.jpg",
                             Name = "CPU 5",
                             Price = 300m,
                             Quantity = 10
@@ -196,7 +199,7 @@ namespace Eshop.Api.Migrations
                             Id = 6,
                             CategoryId = 1,
                             Description = "High performance CPU model 6",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cpu.jpg",
                             Name = "CPU 6",
                             Price = 320m,
                             Quantity = 11
@@ -206,7 +209,7 @@ namespace Eshop.Api.Migrations
                             Id = 7,
                             CategoryId = 1,
                             Description = "High performance CPU model 7",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cpu.jpg",
                             Name = "CPU 7",
                             Price = 340m,
                             Quantity = 12
@@ -216,7 +219,7 @@ namespace Eshop.Api.Migrations
                             Id = 8,
                             CategoryId = 1,
                             Description = "High performance CPU model 8",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cpu.jpg",
                             Name = "CPU 8",
                             Price = 360m,
                             Quantity = 13
@@ -226,7 +229,7 @@ namespace Eshop.Api.Migrations
                             Id = 9,
                             CategoryId = 1,
                             Description = "High performance CPU model 9",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cpu.jpg",
                             Name = "CPU 9",
                             Price = 380m,
                             Quantity = 14
@@ -236,7 +239,7 @@ namespace Eshop.Api.Migrations
                             Id = 10,
                             CategoryId = 1,
                             Description = "High performance CPU model 10",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cpu.jpg",
                             Name = "CPU 10",
                             Price = 400m,
                             Quantity = 15
@@ -246,7 +249,7 @@ namespace Eshop.Api.Migrations
                             Id = 11,
                             CategoryId = 2,
                             Description = "Reliable motherboard model 1",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/mb.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/mb.jpg",
                             Name = "Motherboard 1",
                             Price = 165m,
                             Quantity = 6
@@ -256,7 +259,7 @@ namespace Eshop.Api.Migrations
                             Id = 12,
                             CategoryId = 2,
                             Description = "Reliable motherboard model 2",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/mb.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/mb.jpg",
                             Name = "Motherboard 2",
                             Price = 180m,
                             Quantity = 7
@@ -266,7 +269,7 @@ namespace Eshop.Api.Migrations
                             Id = 13,
                             CategoryId = 2,
                             Description = "Reliable motherboard model 3",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/mb.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/mb.jpg",
                             Name = "Motherboard 3",
                             Price = 195m,
                             Quantity = 8
@@ -276,7 +279,7 @@ namespace Eshop.Api.Migrations
                             Id = 14,
                             CategoryId = 2,
                             Description = "Reliable motherboard model 4",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/mb.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/mb.jpg",
                             Name = "Motherboard 4",
                             Price = 210m,
                             Quantity = 9
@@ -286,7 +289,7 @@ namespace Eshop.Api.Migrations
                             Id = 15,
                             CategoryId = 2,
                             Description = "Reliable motherboard model 5",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/mb.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/mb.jpg",
                             Name = "Motherboard 5",
                             Price = 225m,
                             Quantity = 10
@@ -296,7 +299,7 @@ namespace Eshop.Api.Migrations
                             Id = 16,
                             CategoryId = 2,
                             Description = "Reliable motherboard model 6",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/mb.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/mb.jpg",
                             Name = "Motherboard 6",
                             Price = 240m,
                             Quantity = 11
@@ -306,7 +309,7 @@ namespace Eshop.Api.Migrations
                             Id = 17,
                             CategoryId = 2,
                             Description = "Reliable motherboard model 7",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/mb.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/mb.jpg",
                             Name = "Motherboard 7",
                             Price = 255m,
                             Quantity = 12
@@ -316,7 +319,7 @@ namespace Eshop.Api.Migrations
                             Id = 18,
                             CategoryId = 2,
                             Description = "Reliable motherboard model 8",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/mb.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/mb.jpg",
                             Name = "Motherboard 8",
                             Price = 270m,
                             Quantity = 13
@@ -326,7 +329,7 @@ namespace Eshop.Api.Migrations
                             Id = 19,
                             CategoryId = 2,
                             Description = "Reliable motherboard model 9",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/mb.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/mb.jpg",
                             Name = "Motherboard 9",
                             Price = 285m,
                             Quantity = 14
@@ -336,7 +339,7 @@ namespace Eshop.Api.Migrations
                             Id = 20,
                             CategoryId = 2,
                             Description = "Reliable motherboard model 10",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/mb.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/mb.jpg",
                             Name = "Motherboard 10",
                             Price = 300m,
                             Quantity = 15
@@ -346,7 +349,7 @@ namespace Eshop.Api.Migrations
                             Id = 21,
                             CategoryId = 3,
                             Description = "Powerful graphics card 1",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/gpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/gpu.jpg",
                             Name = "GPU 1",
                             Price = 450m,
                             Quantity = 4
@@ -356,7 +359,7 @@ namespace Eshop.Api.Migrations
                             Id = 22,
                             CategoryId = 3,
                             Description = "Powerful graphics card 2",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/gpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/gpu.jpg",
                             Name = "GPU 2",
                             Price = 500m,
                             Quantity = 5
@@ -366,7 +369,7 @@ namespace Eshop.Api.Migrations
                             Id = 23,
                             CategoryId = 3,
                             Description = "Powerful graphics card 3",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/gpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/gpu.jpg",
                             Name = "GPU 3",
                             Price = 550m,
                             Quantity = 6
@@ -376,7 +379,7 @@ namespace Eshop.Api.Migrations
                             Id = 24,
                             CategoryId = 3,
                             Description = "Powerful graphics card 4",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/gpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/gpu.jpg",
                             Name = "GPU 4",
                             Price = 600m,
                             Quantity = 7
@@ -386,7 +389,7 @@ namespace Eshop.Api.Migrations
                             Id = 25,
                             CategoryId = 3,
                             Description = "Powerful graphics card 5",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/gpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/gpu.jpg",
                             Name = "GPU 5",
                             Price = 650m,
                             Quantity = 8
@@ -396,7 +399,7 @@ namespace Eshop.Api.Migrations
                             Id = 26,
                             CategoryId = 3,
                             Description = "Powerful graphics card 6",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/gpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/gpu.jpg",
                             Name = "GPU 6",
                             Price = 700m,
                             Quantity = 9
@@ -406,7 +409,7 @@ namespace Eshop.Api.Migrations
                             Id = 27,
                             CategoryId = 3,
                             Description = "Powerful graphics card 7",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/gpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/gpu.jpg",
                             Name = "GPU 7",
                             Price = 750m,
                             Quantity = 10
@@ -416,7 +419,7 @@ namespace Eshop.Api.Migrations
                             Id = 28,
                             CategoryId = 3,
                             Description = "Powerful graphics card 8",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/gpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/gpu.jpg",
                             Name = "GPU 8",
                             Price = 800m,
                             Quantity = 11
@@ -426,7 +429,7 @@ namespace Eshop.Api.Migrations
                             Id = 29,
                             CategoryId = 3,
                             Description = "Powerful graphics card 9",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/gpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/gpu.jpg",
                             Name = "GPU 9",
                             Price = 850m,
                             Quantity = 12
@@ -436,7 +439,7 @@ namespace Eshop.Api.Migrations
                             Id = 30,
                             CategoryId = 3,
                             Description = "Powerful graphics card 10",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/gpu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/gpu.jpg",
                             Name = "GPU 10",
                             Price = 900m,
                             Quantity = 13
@@ -446,7 +449,7 @@ namespace Eshop.Api.Migrations
                             Id = 31,
                             CategoryId = 4,
                             Description = "Fast DDR memory kit 1",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/ram.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/ram.jpg",
                             Name = "RAM 1",
                             Price = 75m,
                             Quantity = 11
@@ -456,7 +459,7 @@ namespace Eshop.Api.Migrations
                             Id = 32,
                             CategoryId = 4,
                             Description = "Fast DDR memory kit 2",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/ram.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/ram.jpg",
                             Name = "RAM 2",
                             Price = 80m,
                             Quantity = 12
@@ -466,7 +469,7 @@ namespace Eshop.Api.Migrations
                             Id = 33,
                             CategoryId = 4,
                             Description = "Fast DDR memory kit 3",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/ram.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/ram.jpg",
                             Name = "RAM 3",
                             Price = 85m,
                             Quantity = 13
@@ -476,7 +479,7 @@ namespace Eshop.Api.Migrations
                             Id = 34,
                             CategoryId = 4,
                             Description = "Fast DDR memory kit 4",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/ram.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/ram.jpg",
                             Name = "RAM 4",
                             Price = 90m,
                             Quantity = 14
@@ -486,7 +489,7 @@ namespace Eshop.Api.Migrations
                             Id = 35,
                             CategoryId = 4,
                             Description = "Fast DDR memory kit 5",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/ram.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/ram.jpg",
                             Name = "RAM 5",
                             Price = 95m,
                             Quantity = 15
@@ -496,7 +499,7 @@ namespace Eshop.Api.Migrations
                             Id = 36,
                             CategoryId = 4,
                             Description = "Fast DDR memory kit 6",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/ram.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/ram.jpg",
                             Name = "RAM 6",
                             Price = 100m,
                             Quantity = 16
@@ -506,7 +509,7 @@ namespace Eshop.Api.Migrations
                             Id = 37,
                             CategoryId = 4,
                             Description = "Fast DDR memory kit 7",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/ram.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/ram.jpg",
                             Name = "RAM 7",
                             Price = 105m,
                             Quantity = 17
@@ -516,7 +519,7 @@ namespace Eshop.Api.Migrations
                             Id = 38,
                             CategoryId = 4,
                             Description = "Fast DDR memory kit 8",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/ram.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/ram.jpg",
                             Name = "RAM 8",
                             Price = 110m,
                             Quantity = 18
@@ -526,7 +529,7 @@ namespace Eshop.Api.Migrations
                             Id = 39,
                             CategoryId = 4,
                             Description = "Fast DDR memory kit 9",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/ram.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/ram.jpg",
                             Name = "RAM 9",
                             Price = 115m,
                             Quantity = 19
@@ -536,7 +539,7 @@ namespace Eshop.Api.Migrations
                             Id = 40,
                             CategoryId = 4,
                             Description = "Fast DDR memory kit 10",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/ram.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/ram.jpg",
                             Name = "RAM 10",
                             Price = 120m,
                             Quantity = 20
@@ -546,7 +549,7 @@ namespace Eshop.Api.Migrations
                             Id = 41,
                             CategoryId = 5,
                             Description = "Reliable SSD/HDD 1",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/storage.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/storage.jpg",
                             Name = "Storage 1",
                             Price = 100m,
                             Quantity = 21
@@ -556,7 +559,7 @@ namespace Eshop.Api.Migrations
                             Id = 42,
                             CategoryId = 5,
                             Description = "Reliable SSD/HDD 2",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/storage.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/storage.jpg",
                             Name = "Storage 2",
                             Price = 110m,
                             Quantity = 22
@@ -566,7 +569,7 @@ namespace Eshop.Api.Migrations
                             Id = 43,
                             CategoryId = 5,
                             Description = "Reliable SSD/HDD 3",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/storage.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/storage.jpg",
                             Name = "Storage 3",
                             Price = 120m,
                             Quantity = 23
@@ -576,7 +579,7 @@ namespace Eshop.Api.Migrations
                             Id = 44,
                             CategoryId = 5,
                             Description = "Reliable SSD/HDD 4",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/storage.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/storage.jpg",
                             Name = "Storage 4",
                             Price = 130m,
                             Quantity = 24
@@ -586,7 +589,7 @@ namespace Eshop.Api.Migrations
                             Id = 45,
                             CategoryId = 5,
                             Description = "Reliable SSD/HDD 5",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/storage.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/storage.jpg",
                             Name = "Storage 5",
                             Price = 140m,
                             Quantity = 25
@@ -596,7 +599,7 @@ namespace Eshop.Api.Migrations
                             Id = 46,
                             CategoryId = 5,
                             Description = "Reliable SSD/HDD 6",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/storage.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/storage.jpg",
                             Name = "Storage 6",
                             Price = 150m,
                             Quantity = 26
@@ -606,7 +609,7 @@ namespace Eshop.Api.Migrations
                             Id = 47,
                             CategoryId = 5,
                             Description = "Reliable SSD/HDD 7",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/storage.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/storage.jpg",
                             Name = "Storage 7",
                             Price = 160m,
                             Quantity = 27
@@ -616,7 +619,7 @@ namespace Eshop.Api.Migrations
                             Id = 48,
                             CategoryId = 5,
                             Description = "Reliable SSD/HDD 8",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/storage.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/storage.jpg",
                             Name = "Storage 8",
                             Price = 170m,
                             Quantity = 28
@@ -626,7 +629,7 @@ namespace Eshop.Api.Migrations
                             Id = 49,
                             CategoryId = 5,
                             Description = "Reliable SSD/HDD 9",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/storage.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/storage.jpg",
                             Name = "Storage 9",
                             Price = 180m,
                             Quantity = 29
@@ -636,7 +639,7 @@ namespace Eshop.Api.Migrations
                             Id = 50,
                             CategoryId = 5,
                             Description = "Reliable SSD/HDD 10",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/storage.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/storage.jpg",
                             Name = "Storage 10",
                             Price = 190m,
                             Quantity = 30
@@ -646,7 +649,7 @@ namespace Eshop.Api.Migrations
                             Id = 51,
                             CategoryId = 6,
                             Description = "Stable PSU unit 1",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/psu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/psu.jpg",
                             Name = "Power Supply 1",
                             Price = 90m,
                             Quantity = 8
@@ -656,7 +659,7 @@ namespace Eshop.Api.Migrations
                             Id = 52,
                             CategoryId = 6,
                             Description = "Stable PSU unit 2",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/psu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/psu.jpg",
                             Name = "Power Supply 2",
                             Price = 100m,
                             Quantity = 9
@@ -666,7 +669,7 @@ namespace Eshop.Api.Migrations
                             Id = 53,
                             CategoryId = 6,
                             Description = "Stable PSU unit 3",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/psu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/psu.jpg",
                             Name = "Power Supply 3",
                             Price = 110m,
                             Quantity = 10
@@ -676,7 +679,7 @@ namespace Eshop.Api.Migrations
                             Id = 54,
                             CategoryId = 6,
                             Description = "Stable PSU unit 4",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/psu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/psu.jpg",
                             Name = "Power Supply 4",
                             Price = 120m,
                             Quantity = 11
@@ -686,7 +689,7 @@ namespace Eshop.Api.Migrations
                             Id = 55,
                             CategoryId = 6,
                             Description = "Stable PSU unit 5",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/psu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/psu.jpg",
                             Name = "Power Supply 5",
                             Price = 130m,
                             Quantity = 12
@@ -696,7 +699,7 @@ namespace Eshop.Api.Migrations
                             Id = 56,
                             CategoryId = 6,
                             Description = "Stable PSU unit 6",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/psu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/psu.jpg",
                             Name = "Power Supply 6",
                             Price = 140m,
                             Quantity = 13
@@ -706,7 +709,7 @@ namespace Eshop.Api.Migrations
                             Id = 57,
                             CategoryId = 6,
                             Description = "Stable PSU unit 7",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/psu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/psu.jpg",
                             Name = "Power Supply 7",
                             Price = 150m,
                             Quantity = 14
@@ -716,7 +719,7 @@ namespace Eshop.Api.Migrations
                             Id = 58,
                             CategoryId = 6,
                             Description = "Stable PSU unit 8",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/psu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/psu.jpg",
                             Name = "Power Supply 8",
                             Price = 160m,
                             Quantity = 15
@@ -726,7 +729,7 @@ namespace Eshop.Api.Migrations
                             Id = 59,
                             CategoryId = 6,
                             Description = "Stable PSU unit 9",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/psu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/psu.jpg",
                             Name = "Power Supply 9",
                             Price = 170m,
                             Quantity = 16
@@ -736,7 +739,7 @@ namespace Eshop.Api.Migrations
                             Id = 60,
                             CategoryId = 6,
                             Description = "Stable PSU unit 10",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/psu.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/psu.jpg",
                             Name = "Power Supply 10",
                             Price = 180m,
                             Quantity = 17
@@ -746,7 +749,7 @@ namespace Eshop.Api.Migrations
                             Id = 61,
                             CategoryId = 7,
                             Description = "Durable PC case 1",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/case.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/case.jpg",
                             Name = "Case 1",
                             Price = 65m,
                             Quantity = 6
@@ -756,7 +759,7 @@ namespace Eshop.Api.Migrations
                             Id = 62,
                             CategoryId = 7,
                             Description = "Durable PC case 2",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/case.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/case.jpg",
                             Name = "Case 2",
                             Price = 70m,
                             Quantity = 7
@@ -766,7 +769,7 @@ namespace Eshop.Api.Migrations
                             Id = 63,
                             CategoryId = 7,
                             Description = "Durable PC case 3",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/case.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/case.jpg",
                             Name = "Case 3",
                             Price = 75m,
                             Quantity = 8
@@ -776,7 +779,7 @@ namespace Eshop.Api.Migrations
                             Id = 64,
                             CategoryId = 7,
                             Description = "Durable PC case 4",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/case.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/case.jpg",
                             Name = "Case 4",
                             Price = 80m,
                             Quantity = 9
@@ -786,7 +789,7 @@ namespace Eshop.Api.Migrations
                             Id = 65,
                             CategoryId = 7,
                             Description = "Durable PC case 5",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/case.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/case.jpg",
                             Name = "Case 5",
                             Price = 85m,
                             Quantity = 10
@@ -796,7 +799,7 @@ namespace Eshop.Api.Migrations
                             Id = 66,
                             CategoryId = 7,
                             Description = "Durable PC case 6",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/case.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/case.jpg",
                             Name = "Case 6",
                             Price = 90m,
                             Quantity = 11
@@ -806,7 +809,7 @@ namespace Eshop.Api.Migrations
                             Id = 67,
                             CategoryId = 7,
                             Description = "Durable PC case 7",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/case.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/case.jpg",
                             Name = "Case 7",
                             Price = 95m,
                             Quantity = 12
@@ -816,7 +819,7 @@ namespace Eshop.Api.Migrations
                             Id = 68,
                             CategoryId = 7,
                             Description = "Durable PC case 8",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/case.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/case.jpg",
                             Name = "Case 8",
                             Price = 100m,
                             Quantity = 13
@@ -826,7 +829,7 @@ namespace Eshop.Api.Migrations
                             Id = 69,
                             CategoryId = 7,
                             Description = "Durable PC case 9",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/case.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/case.jpg",
                             Name = "Case 9",
                             Price = 105m,
                             Quantity = 14
@@ -836,7 +839,7 @@ namespace Eshop.Api.Migrations
                             Id = 70,
                             CategoryId = 7,
                             Description = "Durable PC case 10",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/case.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/case.jpg",
                             Name = "Case 10",
                             Price = 110m,
                             Quantity = 15
@@ -846,7 +849,7 @@ namespace Eshop.Api.Migrations
                             Id = 71,
                             CategoryId = 8,
                             Description = "Efficient cooling solution 1",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cooling.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cooling.jpg",
                             Name = "Cooling 1",
                             Price = 55m,
                             Quantity = 9
@@ -856,7 +859,7 @@ namespace Eshop.Api.Migrations
                             Id = 72,
                             CategoryId = 8,
                             Description = "Efficient cooling solution 2",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cooling.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cooling.jpg",
                             Name = "Cooling 2",
                             Price = 60m,
                             Quantity = 10
@@ -866,7 +869,7 @@ namespace Eshop.Api.Migrations
                             Id = 73,
                             CategoryId = 8,
                             Description = "Efficient cooling solution 3",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cooling.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cooling.jpg",
                             Name = "Cooling 3",
                             Price = 65m,
                             Quantity = 11
@@ -876,7 +879,7 @@ namespace Eshop.Api.Migrations
                             Id = 74,
                             CategoryId = 8,
                             Description = "Efficient cooling solution 4",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cooling.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cooling.jpg",
                             Name = "Cooling 4",
                             Price = 70m,
                             Quantity = 12
@@ -886,7 +889,7 @@ namespace Eshop.Api.Migrations
                             Id = 75,
                             CategoryId = 8,
                             Description = "Efficient cooling solution 5",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cooling.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cooling.jpg",
                             Name = "Cooling 5",
                             Price = 75m,
                             Quantity = 13
@@ -896,7 +899,7 @@ namespace Eshop.Api.Migrations
                             Id = 76,
                             CategoryId = 8,
                             Description = "Efficient cooling solution 6",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cooling.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cooling.jpg",
                             Name = "Cooling 6",
                             Price = 80m,
                             Quantity = 14
@@ -906,7 +909,7 @@ namespace Eshop.Api.Migrations
                             Id = 77,
                             CategoryId = 8,
                             Description = "Efficient cooling solution 7",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cooling.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cooling.jpg",
                             Name = "Cooling 7",
                             Price = 85m,
                             Quantity = 15
@@ -916,7 +919,7 @@ namespace Eshop.Api.Migrations
                             Id = 78,
                             CategoryId = 8,
                             Description = "Efficient cooling solution 8",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cooling.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cooling.jpg",
                             Name = "Cooling 8",
                             Price = 90m,
                             Quantity = 16
@@ -926,7 +929,7 @@ namespace Eshop.Api.Migrations
                             Id = 79,
                             CategoryId = 8,
                             Description = "Efficient cooling solution 9",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cooling.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cooling.jpg",
                             Name = "Cooling 9",
                             Price = 95m,
                             Quantity = 17
@@ -936,7 +939,7 @@ namespace Eshop.Api.Migrations
                             Id = 80,
                             CategoryId = 8,
                             Description = "Efficient cooling solution 10",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/cooling.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/cooling.jpg",
                             Name = "Cooling 10",
                             Price = 100m,
                             Quantity = 18
@@ -946,7 +949,7 @@ namespace Eshop.Api.Migrations
                             Id = 81,
                             CategoryId = 9,
                             Description = "High-resolution monitor 1",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/monitor.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/monitor.jpg",
                             Name = "Monitor 1",
                             Price = 230m,
                             Quantity = 5
@@ -956,7 +959,7 @@ namespace Eshop.Api.Migrations
                             Id = 82,
                             CategoryId = 9,
                             Description = "High-resolution monitor 2",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/monitor.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/monitor.jpg",
                             Name = "Monitor 2",
                             Price = 260m,
                             Quantity = 6
@@ -966,7 +969,7 @@ namespace Eshop.Api.Migrations
                             Id = 83,
                             CategoryId = 9,
                             Description = "High-resolution monitor 3",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/monitor.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/monitor.jpg",
                             Name = "Monitor 3",
                             Price = 290m,
                             Quantity = 7
@@ -976,7 +979,7 @@ namespace Eshop.Api.Migrations
                             Id = 84,
                             CategoryId = 9,
                             Description = "High-resolution monitor 4",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/monitor.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/monitor.jpg",
                             Name = "Monitor 4",
                             Price = 320m,
                             Quantity = 8
@@ -986,7 +989,7 @@ namespace Eshop.Api.Migrations
                             Id = 85,
                             CategoryId = 9,
                             Description = "High-resolution monitor 5",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/monitor.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/monitor.jpg",
                             Name = "Monitor 5",
                             Price = 350m,
                             Quantity = 9
@@ -996,7 +999,7 @@ namespace Eshop.Api.Migrations
                             Id = 86,
                             CategoryId = 9,
                             Description = "High-resolution monitor 6",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/monitor.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/monitor.jpg",
                             Name = "Monitor 6",
                             Price = 380m,
                             Quantity = 10
@@ -1006,7 +1009,7 @@ namespace Eshop.Api.Migrations
                             Id = 87,
                             CategoryId = 9,
                             Description = "High-resolution monitor 7",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/monitor.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/monitor.jpg",
                             Name = "Monitor 7",
                             Price = 410m,
                             Quantity = 11
@@ -1016,7 +1019,7 @@ namespace Eshop.Api.Migrations
                             Id = 88,
                             CategoryId = 9,
                             Description = "High-resolution monitor 8",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/monitor.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/monitor.jpg",
                             Name = "Monitor 8",
                             Price = 440m,
                             Quantity = 12
@@ -1026,7 +1029,7 @@ namespace Eshop.Api.Migrations
                             Id = 89,
                             CategoryId = 9,
                             Description = "High-resolution monitor 9",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/monitor.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/monitor.jpg",
                             Name = "Monitor 9",
                             Price = 470m,
                             Quantity = 13
@@ -1036,7 +1039,7 @@ namespace Eshop.Api.Migrations
                             Id = 90,
                             CategoryId = 9,
                             Description = "High-resolution monitor 10",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/monitor.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/monitor.jpg",
                             Name = "Monitor 10",
                             Price = 500m,
                             Quantity = 14
@@ -1046,7 +1049,7 @@ namespace Eshop.Api.Migrations
                             Id = 91,
                             CategoryId = 10,
                             Description = "Peripheral device 1",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/peripheral.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/peripheral.jpg",
                             Name = "Peripheral 1",
                             Price = 40m,
                             Quantity = 16
@@ -1056,7 +1059,7 @@ namespace Eshop.Api.Migrations
                             Id = 92,
                             CategoryId = 10,
                             Description = "Peripheral device 2",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/peripheral.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/peripheral.jpg",
                             Name = "Peripheral 2",
                             Price = 50m,
                             Quantity = 17
@@ -1066,7 +1069,7 @@ namespace Eshop.Api.Migrations
                             Id = 93,
                             CategoryId = 10,
                             Description = "Peripheral device 3",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/peripheral.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/peripheral.jpg",
                             Name = "Peripheral 3",
                             Price = 60m,
                             Quantity = 18
@@ -1076,7 +1079,7 @@ namespace Eshop.Api.Migrations
                             Id = 94,
                             CategoryId = 10,
                             Description = "Peripheral device 4",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/peripheral.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/peripheral.jpg",
                             Name = "Peripheral 4",
                             Price = 70m,
                             Quantity = 19
@@ -1086,7 +1089,7 @@ namespace Eshop.Api.Migrations
                             Id = 95,
                             CategoryId = 10,
                             Description = "Peripheral device 5",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/peripheral.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/peripheral.jpg",
                             Name = "Peripheral 5",
                             Price = 80m,
                             Quantity = 20
@@ -1096,7 +1099,7 @@ namespace Eshop.Api.Migrations
                             Id = 96,
                             CategoryId = 10,
                             Description = "Peripheral device 6",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/peripheral.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/peripheral.jpg",
                             Name = "Peripheral 6",
                             Price = 90m,
                             Quantity = 21
@@ -1106,7 +1109,7 @@ namespace Eshop.Api.Migrations
                             Id = 97,
                             CategoryId = 10,
                             Description = "Peripheral device 7",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/peripheral.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/peripheral.jpg",
                             Name = "Peripheral 7",
                             Price = 100m,
                             Quantity = 22
@@ -1116,7 +1119,7 @@ namespace Eshop.Api.Migrations
                             Id = 98,
                             CategoryId = 10,
                             Description = "Peripheral device 8",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/peripheral.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/peripheral.jpg",
                             Name = "Peripheral 8",
                             Price = 110m,
                             Quantity = 23
@@ -1126,7 +1129,7 @@ namespace Eshop.Api.Migrations
                             Id = 99,
                             CategoryId = 10,
                             Description = "Peripheral device 9",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/peripheral.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/peripheral.jpg",
                             Name = "Peripheral 9",
                             Price = 120m,
                             Quantity = 24
@@ -1136,7 +1139,7 @@ namespace Eshop.Api.Migrations
                             Id = 100,
                             CategoryId = 10,
                             Description = "Peripheral device 10",
-                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/peripheral.jpg",
+                            ImageUrl = "https://raw.githubusercontent.com/B0husk0/Eshop/main/assets/images/products/peripheral.jpg",
                             Name = "Peripheral 10",
                             Price = 130m,
                             Quantity = 25

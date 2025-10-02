@@ -118,6 +118,12 @@ export default function Products({ onNotify }: ProductsProps) {
                   ${product.price.toFixed(2)}
                 </span>
               </div>
+              <img
+  src={product.imageUrl}
+  alt={product.name}
+  className="w-full h-40 object-contain mb-3"
+/>
+
 
               <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                 {product.description}
