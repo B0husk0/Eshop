@@ -132,6 +132,7 @@ app.UseSwaggerUI(c =>
     c.RoutePrefix = "swagger";
 });
 
+app.MapGet("/ping", () => Results.Ok(new { status = "ok", time = DateTime.UtcNow }));
 app.UseHttpsRedirection();
 app.MapControllers();
 
