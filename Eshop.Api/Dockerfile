@@ -1,30 +1,27 @@
-# See https://aka.ms/customizecontainer to learn how to customize your debug container and how Visual Studio uses this Dockerfile to build your images for faster debugging.
-
-# This stage is used when running from VS in fast mode (Default for Debug configuration)
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
-USER $APP_UID
-WORKDIR /app
-EXPOSE 8080
-EXPOSE 8081
-
-
-# This stage is used to build the service project
+# Build stage
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["Eshop.csproj", "."]
-RUN dotnet restore "./Eshop.csproj"
-COPY . .
-WORKDIR "/src/."
-RUN dotnet build "./Eshop.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
-# This stage is used to publish the service project to be copied to the final stage
+# copy iba csproj
+COPY ["Eshop.Api.csproj", "."]
+RUN dotnet restore "Eshop.Api.csproj"
+
+# skopíruj zvyšok projektu
+COPY . .
+RUN dotnet build "Eshop.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+# Publish stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./Eshop.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Eshop.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-# This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
-FROM base AS final
+# Runtime stage
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
+
+# skopíruj publish + konfiguráky
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Eshop.dll"]
+COPY appsettings*.json ./
+
+ENTRYPOINT ["dotnet", "Eshop.Api.dll"]

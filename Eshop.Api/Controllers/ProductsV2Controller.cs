@@ -1,10 +1,11 @@
-﻿using Eshop.Api.Data;
+﻿using Asp.Versioning;
+using Eshop.Api.Data;
 using Eshop.Api.Dtos;
+using Eshop.Api.Messaging;
 using Eshop.Api.Models;
 using Eshop.Api.Queue;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Asp.Versioning;
 
 namespace Eshop.Api.Controllers
 {
@@ -99,5 +100,41 @@ namespace Eshop.Api.Controllers
 
             return Accepted(new { Message = $"Stock update for product {id} has been queued." });
         }
+
+        [HttpPatch("rabbit/{id:int}/stock")]
+        public async Task<ActionResult> UpdateProductStock(
+            int id,
+            [FromBody] UpdateStockDto dto,
+            [FromServices] StockUpdateProducer producer,
+            CancellationToken cancellationToken)
+        {
+            if (!ModelState.IsValid)
+            {
+                return ValidationProblem(ModelState);
+            }
+
+            if (dto.Quantity < 0)
+            {
+                return BadRequest(new { Message = "Quantity cannot be negative." });
+            }
+
+            var product = await _context.Products.AsNoTracking()
+                .FirstOrDefaultAsync(p => p.Id == id, cancellationToken);
+
+            if (product == null)
+            {
+                return NotFound(new { Message = $"Product with id {id} was not found." });
+            }
+
+            // Publish to RabbitMQ asynchronously
+            await producer.PublishAsync(new StockUpdateMessage
+            {
+                ProductId = id,
+                Quantity = dto.Quantity
+            }, cancellationToken);
+
+            return Accepted(new { Message = $"Stock update for product {id} has been queued." });
+        }
+
     }
 }
