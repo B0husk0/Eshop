@@ -20,27 +20,33 @@ builder.Configuration
 
 // Add services
 builder.Services.AddControllers();
-builder.Services.AddSingleton<IStockUpdateQueue, StockUpdateQueue>();
-builder.Services.AddHostedService<StockUpdateWorker>();
-builder.Services.AddSingleton<StockUpdateProducer>();
-builder.Services.AddHostedService<StockUpdateConsumer>();
 
 // EF Core 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // RabbitMQ connection factory (singleton)
-builder.Services.AddSingleton<IConnectionFactory>(sp =>
+var rabbitHost = builder.Configuration["RabbitMQ:Host"];
+if (!string.IsNullOrEmpty(rabbitHost))
 {
-    var config = builder.Configuration.GetSection("RabbitMQ");
-    return new ConnectionFactory
+    builder.Services.AddSingleton<IConnectionFactory>(sp =>
     {
-        HostName = config["Host"],
-        Port = int.Parse(config["Port"] ?? "5672"),
-        UserName = config["UserName"],
-        Password = config["Password"]
-    };
-});
+        var config = builder.Configuration.GetSection("RabbitMQ");
+        return new ConnectionFactory
+        {
+            HostName = config["Host"],
+            Port = int.Parse(config["Port"] ?? "5672"),
+            UserName = config["UserName"],
+            Password = config["Password"]
+        };
+    });
+
+    builder.Services.AddSingleton<IStockUpdateQueue, StockUpdateQueue>();
+    builder.Services.AddHostedService<StockUpdateWorker>();
+    builder.Services.AddSingleton<StockUpdateProducer>();
+    builder.Services.AddHostedService<StockUpdateConsumer>();
+}
+
 
 // API Versioning
 builder.Services.AddApiVersioning(options =>
