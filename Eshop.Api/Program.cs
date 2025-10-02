@@ -1,21 +1,46 @@
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
 using Eshop.Api.Data;
+using Eshop.Api.Messaging;
 using Eshop.Api.Queue;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+    .AddEnvironmentVariables();
+
 
 // Add services
 builder.Services.AddControllers();
 builder.Services.AddSingleton<IStockUpdateQueue, StockUpdateQueue>();
 builder.Services.AddHostedService<StockUpdateWorker>();
+builder.Services.AddSingleton<StockUpdateProducer>();
+builder.Services.AddHostedService<StockUpdateConsumer>();
 
 // EF Core 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// RabbitMQ connection factory (singleton)
+builder.Services.AddSingleton<IConnectionFactory>(sp =>
+{
+    var config = builder.Configuration.GetSection("RabbitMQ");
+    return new ConnectionFactory
+    {
+        HostName = config["Host"],
+        Port = int.Parse(config["Port"] ?? "5672"),
+        UserName = config["UserName"],
+        Password = config["Password"]
+    };
+});
 
 // API Versioning
 builder.Services.AddApiVersioning(options =>
@@ -68,6 +93,14 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 var app = builder.Build();
+
+// apply migrations automatically
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    db.Database.Migrate();
+}
+
 
 // Swagger UI
 app.UseSwagger();
