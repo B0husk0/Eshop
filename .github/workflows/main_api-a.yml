@@ -61,7 +61,8 @@ jobs:
         with:
           app-name: 'api-a'
           slot-name: 'Production'
-          package: ./myapp
+          package: ./.net-app
 
 
           
+
