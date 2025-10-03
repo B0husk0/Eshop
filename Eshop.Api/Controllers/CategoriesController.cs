@@ -19,7 +19,16 @@ namespace Eshop.Api.Controllers
             _context = context;
         }
 
-        // GET: api/v1/Categories
+        /// <summary>
+        /// Retrieves all categories with their associated products.
+        /// </summary>
+        /// <remarks>
+        /// Returns a list of categories, each including its products.
+        /// </remarks>
+        /// <returns>
+        /// A list of <see cref="CategoryDto"/> objects.
+        /// </returns>
+        /// <response code="200">Returns the list of categories.</response>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<CategoryDto>>> GetCategories()
         {
@@ -47,7 +56,15 @@ namespace Eshop.Api.Controllers
             return Ok(result);
         }
 
-        // GET: api/v1/Categories/5
+        /// <summary>
+        /// Retrieves a specific category by its ID, including its products.
+        /// </summary>
+        /// <param name="id">The ID of the category to retrieve.</param>
+        /// <returns>
+        /// The <see cref="CategoryDto"/> object for the specified category.
+        /// </returns>
+        /// <response code="200">Returns the category with the specified ID.</response>
+        /// <response code="404">If the category is not found.</response>
         [HttpGet("{id}")]
         public async Task<ActionResult<CategoryDto>> GetCategory(int id)
         {

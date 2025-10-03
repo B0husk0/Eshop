@@ -34,10 +34,10 @@ if (!string.IsNullOrEmpty(rabbitHost))
         var config = builder.Configuration.GetSection("RabbitMQ");
         return new ConnectionFactory
         {
-            HostName = config["Host"],
+            HostName = config["Host"] ?? string.Empty,
             Port = int.Parse(config["Port"] ?? "5672"),
-            UserName = config["UserName"],
-            Password = config["Password"]
+            UserName = config["UserName"] ?? string.Empty,
+            Password = config["Password"] ?? string.Empty
         };
     });
 
@@ -138,7 +138,6 @@ app.UseSwaggerUI(c =>
     c.RoutePrefix = "swagger";
 });
 
-app.MapGet("/ping", () => Results.Ok(new { status = "ok", time = DateTime.UtcNow }));
 app.UseHttpsRedirection();
 app.MapControllers();
 

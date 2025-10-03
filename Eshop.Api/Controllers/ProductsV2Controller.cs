@@ -27,7 +27,7 @@ namespace Eshop.Api.Controllers
         /// Retrieves products with pagination.
         /// </summary>
         /// <remarks>
-        /// GET: api/v2/products?page=1&pageSize=10
+        /// GET: api/v2/products?page=1&amp;pageSize=10
         /// Returns a paged list of products.
         /// </remarks>
         /// <param name="page">Page number (default 1)</param>
@@ -101,7 +101,25 @@ namespace Eshop.Api.Controllers
             return Accepted(new { Message = $"Stock update for product {id} has been queued." });
         }
 
+        /// <summary>
+        /// Queues a stock update request for a product using RabbitMQ.
+        /// </summary>
+        /// <remarks>
+        /// PATCH: api/v2/products/rabbit/{id}/stock
+        /// This endpoint publishes a stock update message to RabbitMQ for asynchronous processing.
+        /// The update will be handled by a background worker.
+        /// </remarks>
+        /// <param name="id">Product ID</param>
+        /// <param name="dto">Stock update request</param>
+        /// <param name="producer">RabbitMQ stock update producer (injected)</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <response code="202">If the update was accepted and queued</response>
+        /// <response code="400">If the request is invalid</response>
+        /// <response code="404">If the product was not found</response>
         [HttpPatch("rabbit/{id:int}/stock")]
+        [ProducesResponseType(StatusCodes.Status202Accepted)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<ActionResult> UpdateProductStock(
             int id,
             [FromBody] UpdateStockDto dto,
